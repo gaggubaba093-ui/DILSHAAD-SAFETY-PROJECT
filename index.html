@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dilshaad Safety Project | Invisible Grill & Safety Net</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f5f7fb;
+  color:#172033;
+}
+
+header{
+  background:linear-gradient(135deg,#07152f,#1261d8);
+  color:white;
+  padding:22px 15px;
+  text-align:center;
+}
+
+header h1{
+  font-size:25px;
+}
+
+header p{
+  margin-top:7px;
+  color:#dbeafe;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:white;
+  display:flex;
+  overflow-x:auto;
+  gap:8px;
+  padding:10px;
+  box-shadow:0 2px 10px #0002;
+}
+
+nav button{
+  border:0;
+  background:#e8eef8;
+  padding:10px 15px;
+  border-radius:10px;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+nav button.active{
+  background:#1261d8;
+  color:white;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:15px;
+}
+
+section{
+  display:none;
+}
+
+section.active{
+  display:block;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  margin-bottom:15px;
+  box-shadow:0 4px 18px #00000012;
+}
+
+h2{
+  margin-bottom:15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+label{
+  display:block;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccd5e3;
+  border-radius:10px;
+  outline:none;
+}
+
+textarea{
+  min-height:80px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+button{
+  cursor:pointer;
+}
+
+.btn{
+  border:0;
+  padding:11px 16px;
+  border-radius:10px;
+  color:white;
+  background:#1261d8;
+  font-weight:bold;
+}
+
+.green{
+  background:#16a34a;
+}
+
+.red{
+  background:#dc2626;
+}
+
+.dark{
+  background:#172033;
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:15px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.stat{
+  background:#eef5ff;
+  padding:15px;
+  border-radius:14px;
+}
+
+.stat span{
+  font-size:13px;
+}
+
+.stat b{
+  display:block;
+  font-size:25px;
+  margin-top:5px;
+}
+
+.result{
+  background:#f1f5f9;
+  padding:15px;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+.total{
+  font-size:24px;
+  font-weight:bold;
+  text-align:right;
+  margin-top:10px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:10px;
+  border-bottom:1px solid #e2e8f0;
+  text-align:left;
+  font-size:13px;
+}
+
+th{
+  background:#f8fafc;
+}
+
+.tableBox{
+  overflow:auto;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.gallery img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.service{
+  padding:15px;
+  background:#f8fafc;
+  border-radius:12px;
+  margin-bottom:10px;
+}
+
+.service b{
+  color:#1261d8;
+}
+
+footer{
+  background:#07152f;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+  margin-top:20px;
+}
+
+@media(max-width:700px){
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+  }
+
+  header h1{
+    font-size:21px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🛡️ Dilshaad Safety Project</h1>
+<p>Invisible Grill & Safety Net Specialist</p>
+</header>
+
+<nav>
+<button class="active" onclick="showPage('home',this)">Home</button>
+<button onclick="showPage('services',this)">Services</button>
+<button onclick="showPage('calculator',this)">Calculator</button>
+<button onclick="showPage('quotation',this)">Quotation</button>
+<button onclick="showPage('customers',this)">Customers</button>
+<button onclick="showPage('gallery',this)">Gallery</button>
+</nav>
+
+<div class="container">
+
+<!-- HOME -->
+
+<section id="home" class="active">
+
+<div class="card">
+<h2>Welcome 👋</h2>
+
+<p>
+आपके घर, बालकनी, खिड़की और बिल्डिंग के लिए
+Invisible Grill और Safety Net की भरोसेमंद सर्विस।
+</p>
+
+<div class="actions">
+<button class="btn" onclick="showPage('quotation')">
+Quotation बनाएं
+</button>
+
+<button class="btn green" onclick="callBusiness()">
+📞 Call Now
+</button>
+</div>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<span>Customers</span>
+<b id="customerCount">0</b>
+</div>
+
+<div class="stat">
+<span>Quotations</span>
+<b id="quoteCount">0</b>
+</div>
+
+<div class="stat">
+<span>Total Sales</span>
+<b id="salesCount">₹0</b>
+</div>
+
+<div class="stat">
+<span>Services</span>
+<b>7+</b>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>हमारी Services</h2>
+
+<div class="service">
+<b>Invisible Grill</b>
+<p>Balcony और Window Safety के लिए।</p>
+</div>
+
+<div class="service">
+<b>Safety Net</b>
+<p>बच्चों और pets की safety के लिए।</p>
+</div>
+
+<div class="service">
+<b>Pigeon Net</b>
+<p>बालकनी को pigeons से सुरक्षित रखें।</p>
+</div>
+
+<div class="service">
+<b>Mosquito Net</b>
+<p>घर को mosquitoes से सुरक्षित रखें।</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="card">
+
+<h2>🛠️ Our Services</h2>
+
+<div class="service">
+<b>Invisible Grill</b>
+<p>Strong stainless steel safety solution.</p>
+</div>
+
+<div class="service">
+<b>Child Safety Net</b>
+<p>बच्चों के लिए balcony और window safety.</p>
+</div>
+
+<div class="service">
+<b>Pigeon Net</b>
+<p>Balcony pigeon protection.</p>
+</div>
+
+<div class="service">
+<b>Bird Net</b>
+<p>Bird protection और balcony safety.</p>
+</div>
+
+<div class="service">
+<b>Sports Net</b>
+<p>Sports और practice area के लिए.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CALCULATOR -->
+
+<section id="calculator">
+
+<div class="card">
+
+<h2>📐 Sq.Ft. Calculator</h2>
+
+<div class="grid">
+
+<div>
+<label>Width (Feet)</label>
+<input id="width" type="number" step="0.01" value="0"
+oninput="calculate()">
+</div>
+
+<div>
+<label>Height (Feet)</label>
+<input id="height" type="number" step="0.01" value="0"
+oninput="calculate()">
+</div>
+
+<div>
+<label>Quantity</label>
+<input id="quantity" type="number" value="1"
+oninput="calculate()">
+</div>
+
+<div>
+<label>Rate / Sq.Ft.</label>
+<input id="rate" type="number" value="0"
+oninput="calculate()">
+</div>
+
+</div>
+
+<div class="result">
+
+<p>Area: <b id="area">0</b> Sq.Ft.</p>
+
+<p>Material Amount:
+<b id="material">₹0</b>
+</p>
+
+<div class="total">
+Total: <span id="calcTotal">₹0</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- QUOTATION -->
+
+<section id="quotation">
+
+<div class="card">
+
+<h2>🧾 Create Quotation</h2>
+
+<div class="grid">
+
+<div>
+<label>Customer Name</label>
+<input id="customerName">
+</div>
+
+<div>
+<label>Mobile Number</label>
+<input id="customerPhone" type="tel">
+</div>
+
+<div>
+<label>Address</label>
+<input id="customerAddress">
+</div>
+
+<div>
+<label>Service</label>
+
+<select id="serviceName">
+
+<option>Invisible Grill</option>
+<option>Safety Net</option>
+<option>Pigeon Net</option>
+<option>Bird Net</option>
+<option>Mosquito Net</option>
+<option>Child Safety Net</option>
+<option>Sports Net</option>
+
+</select>
+
+</div>
+
+<div>
+<label>Width (Feet)</label>
+<input id="qWidth" type="number" step="0.01"
+oninput="quotationCalculate()">
+</div>
+
+<div>
+<label>Height (Feet)</label>
+<input id="qHeight" type="number" step="0.01"
+oninput="quotationCalculate()">
+</div>
+
+<div>
+<label>Quantity</label>
+<input id="qQuantity" type="number" value="1"
+oninput="quotationCalculate()">
+</div>
+
+<div>
+<label>Rate / Sq.Ft.</label>
+<input id="qRate" type="number"
+oninput="quotationCalculate()">
+</div>
+
+<div>
+<label>Installation Charge</label>
+<input id="installation" type="number" value="0"
+oninput="quotationCalculate()">
+</div>
+
+<div>
+<label>Transport Charge</label>
+<input id="transport" type="number" value="0"
+oninput="quotationCalculate()">
+</div>
+
+<div>
+<label>Discount</label>
+<input id="discount" type="number" value="0"
+oninput="quotationCalculate()">
+</div>
+
+<div class="full">
+<label>Notes</label>
+<textarea id="notes"></textarea>
+</div>
+
+</div>
+
+<div class="result">
+
+<p>Sq.Ft.:
+<b id="qArea">0</b>
+</p>
+
+<p>Material:
+<b id="qMaterial">₹0</b>
+</p>
+
+<p>Installation:
+<b id="qInstallation">₹0</b>
+</p>
+
+<p>Transport:
+<b id="qTransport">₹0</b>
+</p>
+
+<p>Discount:
+<b id="qDiscount">₹0</b>
+</p>
+
+<div class="total">
+Grand Total:
+<span id="grandTotal">₹0</span>
+</div>
+
+</div>
+
+<div class="actions">
+
+<button class="btn" onclick="saveQuotation()">
+💾 Save
+</button>
+
+<button class="btn green" onclick="printQuotation()">
+🖨️ Print / PDF
+</button>
+
+<button class="btn dark" onclick="clearQuotation()">
+Clear
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CUSTOMERS -->
+
+<section id="customers">
+
+<div class="card">
+
+<h2>👤 Customer Records</h2>
+
+<div class="tableBox">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Mobile</th>
+<th>Address</th>
+<th>Delete</th>
+</tr>
+
+</thead>
+
+<tbody id="customerTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🧾 Quotation Records</h2>
+
+<div class="tableBox">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Date</th>
+<th>Customer</th>
+<th>Service</th>
+<th>Total</th>
+<th>Delete</th>
+</tr>
+
+</thead>
+
+<tbody id="quoteTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="card">
+
+<h2>📸 Work Gallery</h2>
+
+<input
+type="file"
+id="photoInput"
+accept="image/*"
+multiple
+onchange="uploadPhotos(this)"
+>
+
+<div class="gallery" id="galleryBox"></div>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+
+<h3>Dilshaad Safety Project</h3>
+
+<p>Invisible Grill • Safety Net • Pigeon Net</p>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+function showPage(id,btn){
+
+document.querySelectorAll("section")
+.forEach(s=>s.classList.remove("active"));
+
+document.getElementById(id)
+.classList.add("active");
+
+document.querySelectorAll("nav button")
+.forEach(b=>b.classList.remove("active"));
+
+if(btn) btn.classList.add("active");
+
+loadData();
+
+}
+
+function money(n){
+
+return "₹"+Number(n||0)
+.toLocaleString("en-IN",
+{maximumFractionDigits:2});
+
+}
+
+function calculate(){
+
+let w=Number(width.value)||0;
+let h=Number(height.value)||0;
+let q=Number(quantity.value)||1;
+let r=Number(rate.value)||0;
+
+let a=w*h*q;
+let m=a*r;
+
+area.innerText=a.toFixed(2);
+material.innerText=money(m);
+calcTotal.innerText=money(m);
+
+}
+
+function quotationCalculate(){
+
+let w=Number(qWidth.value)||0;
+let h=Number(qHeight.value)||0;
+let q=Number(qQuantity.value)||1;
+let r=Number(qRate.value)||0;
+
+let a=w*h*q;
+
+let m=a*r;
+
+let ins=Number(installation.value)||0;
+let trans=Number(transport.value)||0;
+let dis=Number(discount.value)||0;
+
+let total=Math.max(0,m+ins+trans-dis);
+
+qArea.innerText=a.toFixed(2);
+qMaterial.innerText=money(m);
+qInstallation.innerText=money(ins);
+qTransport.innerText=money(trans);
+qDiscount.innerText=money(dis);
+grandTotal.innerText=money(total);
+
+}
+
+function saveQuotation(){
+
+let name=customerName.value.trim();
+let phone=customerPhone.value.trim();
+
+if(!name || !phone){
+
+alert("Customer Name और Mobile भरें");
+return;
+
+}
+
+let customers=
+JSON.parse(localStorage.getItem("customers")||"[]");
+
+let customer={
+id:Date.now(),
+name:name,
+phone:phone,
+address:customerAddress.value
+};
+
+customers.push(customer);
+
+localStorage.setItem(
+"customers",
+JSON.stringify(customers)
+);
+
+let quotations=
+JSON.parse(localStorage.getItem("quotations")||"[]");
+
+let quotation={
+
+id:Date.now(),
+date:new Date().toLocaleString("en-IN"),
+customer:name,
+phone:phone,
+service:serviceName.value,
+area:qArea.innerText,
+total:grandTotal.innerText
+
+};
+
+quotations.push(quotation);
+
+localStorage.setItem(
+"quotations",
+JSON.stringify(quotations)
+);
+
+alert("Quotation Saved ✅");
+
+loadData();
+
+}
+
+function loadData(){
+
+let customers=
+JSON.parse(localStorage.getItem("customers")||"[]");
+
+let quotations=
+JSON.parse(localStorage.getItem("quotations")||"[]");
+
+customerCount.innerText=customers.length;
+
+quoteCount.innerText=quotations.length;
+
+let sales=0;
+
+quotations.forEach(q=>{
+sales+=Number(
+q.total.replace(/[₹,]/g,"")
+)||0;
+});
+
+salesCount.innerText=money(sales);
+
+customerTable.innerHTML=
+customers.map(c=>`
+
+<tr>
+
+<td>${escapeHTML(c.name)}</td>
+
+<td>${escapeHTML(c.phone)}</td>
+
+<td>${escapeHTML(c.address||"")}</td>
+
+<td>
+<button class="btn red"
+onclick="deleteCustomer(${c.id})">
+Delete
+</button>
+</td>
+
+</tr>
+
+`).join("");
+
+quoteTable.innerHTML=
+quotations.map(q=>`
+
+<tr>
+
+<td>${escapeHTML(q.date)}</td>
+
+<td>${escapeHTML(q.customer)}</td>
+
+<td>${escapeHTML(q.service)}</td>
+
+<td>${q.total}</td>
+
+<td>
+<button class="btn red"
+onclick="deleteQuotation(${q.id})">
+Delete
+</button>
+</td>
+
+</tr>
+
+`).join("");
+
+loadGallery();
+
+}
+
+function deleteCustomer(id){
+
+if(!confirm("Customer delete करें?")) return;
+
+let data=
+JSON.parse(localStorage.getItem("customers")||"[]");
+
+data=data.filter(x=>x.id!==id);
+
+localStorage.setItem(
+"customers",
+JSON.stringify(data)
+);
+
+loadData();
+
+}
+
+function deleteQuotation(id){
+
+if(!confirm("Quotation delete करें?")) return;
+
+let data=
+JSON.parse(localStorage.getItem("quotations")||"[]");
+
+data=data.filter(x=>x.id!==id);
+
+localStorage.setItem(
+"quotations",
+JSON.stringify(data)
+);
+
+loadData();
+
+}
+
+function clearQuotation(){
+
+document.querySelectorAll("#quotation input")
+.forEach(i=>i.value="");
+
+document.getElementById("qQuantity").value=1;
+
+document.getElementById("serviceName").value=
+"Invisible Grill";
+
+document.getElementById("notes").value="";
+
+quotationCalculate();
+
+}
+
+function printQuotation(){
+
+quotationCalculate();
+
+let html=`
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Dilshaad Safety Project</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:30px;
+}
+
+h1{
+color:#1261d8;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+td,th{
+padding:10px;
+border:1px solid #ddd;
+}
+
+.total{
+font-size:24px;
+font-weight:bold;
+text-align:right;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Dilshaad Safety Project</h1>
+
+<h2>Quotation</h2>
+
+<hr>
+
+<p>
+<b>Customer:</b>
+${escapeHTML(customerName.value)}
+</p>
+
+<p>
+<b>Mobile:</b>
+${escapeHTML(customerPhone.value)}
+</p>
+
+<p>
+<b>Address:</b>
+${escapeHTML(customerAddress.value)}
+</p>
+
+<table>
+
+<tr>
+<th>Service</th>
+<th>Area</th>
+<th>Rate</th>
+<th>Amount</th>
+</tr>
+
+<tr>
+
+<td>${escapeHTML(serviceName.value)}</td>
+
+<td>${qArea.innerText} Sq.Ft.</td>
+
+<td>${money(qRate.value)}</td>
+
+<td>${qMaterial.innerText}</td>
+
+</tr>
+
+</table>
+
+<p>Installation: ${qInstallation.innerText}</p>
+
+<p>Transport: ${qTransport.innerText}</p>
+
+<p>Discount: ${qDiscount.innerText}</p>
+
+<div class="total">
+Grand Total: ${grandTotal.innerText}
+</div>
+
+<p>
+${escapeHTML(notes.value)}
+</p>
+
+</body>
+
+</html>
+
+`;
+
+let win=window.open("","_blank");
+
+win.document.write(html);
+
+win.document.close();
+
+win.print();
+
+}
+
+function uploadPhotos(input){
+
+let files=[...input.files];
+
+files.forEach(file=>{
+
+let reader=new FileReader();
+
+reader.onload=function(e){
+
+let photos=
+JSON.parse(localStorage.getItem("photos")||"[]");
+
+photos.push(e.target.result);
+
+localStorage.setItem(
+"photos",
+JSON.stringify(photos)
+);
+
+loadGallery();
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+function loadGallery(){
+
+let photos=
+JSON.parse(localStorage.getItem("photos")||"[]");
+
+galleryBox.innerHTML=
+photos.map((p,i)=>`
+
+<div>
+
+<img src="${p}">
+
+<button
+class="btn red"
+style="width:100%;margin-top:5px"
+onclick="deletePhoto(${i})">
+
+Delete
+
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+function deletePhoto(index){
+
+let photos=
+JSON.parse(localStorage.getItem("photos")||"[]");
+
+photos.splice(index,1);
+
+localStorage.setItem(
+"photos",
+JSON.stringify(photos)
+);
+
+loadGallery();
+
+}
+
+function callBusiness(){
+
+let phone="";
+
+if(phone){
+
+location.href="tel:"+phone;
+
+}else{
+
+alert(
+"अपने Business Mobile Number को code में डालें।"
+);
+
+}
+
+}
+
+function escapeHTML(text){
+
+return String(text||"")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+loadData();
+
+</script>
+
+</body>
+</html>
